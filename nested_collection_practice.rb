@@ -1,4 +1,5 @@
 require_relative 'expectations'
+require_relative 'restaurant'
 
 # These 3 tests were curated to test manipulation of nested collections
 RSpec.describe 'Nested Collection Fun-Time' do
@@ -47,7 +48,8 @@ RSpec.describe 'Nested Collection Fun-Time' do
 
     it 'can return all ingredients across all restaurants' do
       # Write code that returns a list of all of the ingredients across
-      # all restaurants in the hash found in restaurant_hash.rb
+      # all restaurants in the hash found in restaurant.rb
+      # Note: reference 'Restaurant.stores' when refering to the above hash.
       ingredients = nil
       expect(ingredients).to eq(Data.ingredients)
     end
