@@ -24,7 +24,7 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # the state's key. Example:
       #   {  "Oregon" => {abbreviation: "OR", capital: "Salem"}, etc... }
       state_info = nil
-      expect(state_info).to eq(Data.states)
+      expect(state_info).to eq(DataStruct.states)
     end
   end 
 
@@ -42,7 +42,7 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # Write code that creates a hash that follows this pattern:
       #  e.g. {24 => ['Juan', 'Steve', 'Jill']...}
       people_by_age = nil
-      expect(people_by_age).to eq(Data.people)
+      expect(people_by_age).to eq(DataStruct.people)
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # all restaurants in the hash found in restaurant.rb
       # Note: reference 'Restaurant.stores' when refering to the above hash.
       ingredients = nil
-      expect(ingredients).to eq(Data.ingredients)
+      expect(ingredients).to eq(DataStruct.ingredients)
     end
   end
 
