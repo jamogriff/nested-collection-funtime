@@ -1,6 +1,6 @@
 # This file contains the test expectations for the data structures used
 # in nested_collections.rb
-class Data
+class DataStruct
 
   def self.states
     {
