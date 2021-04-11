@@ -23,7 +23,13 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # Write code to nest the key-val pairs of the capitals hash within
       # the state's key. Example:
       #   {  "Oregon" => {abbreviation: "OR", capital: "Salem"}, etc... }
-      state_info = nil
+      state_info = {}
+      states.each do |state, abbrv|
+        state_info[state] = {
+          abbreviation: abbrv,
+          capital: capitals[abbrv]
+        }
+      end
       expect(state_info).to eq(DataStruct.states)
     end
   end 
