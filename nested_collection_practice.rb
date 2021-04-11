@@ -23,7 +23,13 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # Write code to nest the key-val pairs of the capitals hash within
       # the state's key. Example:
       #   {  "Oregon" => {abbreviation: "OR", capital: "Salem"}, etc... }
-      state_info = nil
+      state_info = {}
+      states.each do |state, abbrv|
+        state_info[state] = {
+          abbreviation: abbrv,
+          capital: capitals[abbrv]
+        }
+      end
       expect(state_info).to eq(DataStruct.states)
     end
   end 
@@ -41,7 +47,14 @@ RSpec.describe 'Nested Collection Fun-Time' do
     it 'creates a nested hash where age is the key' do
       # Write code that creates a hash that follows this pattern:
       #  e.g. {24 => ['Juan', 'Steve', 'Jill']...}
-      people_by_age = nil
+      people_by_age = {}
+      ages.each do |person|
+        if people_by_age.has_key?(person[1])
+          people_by_age[person[1]] << person[0]
+        else
+          people_by_age[person[1]] = [person[0]]
+        end
+      end
       expect(people_by_age).to eq(DataStruct.people)
     end
   end
@@ -52,8 +65,14 @@ RSpec.describe 'Nested Collection Fun-Time' do
       # Write code that returns a list of all of the ingredients across
       # all restaurants in the hash found in restaurant.rb
       # Note: reference 'Restaurant.stores' when refering to the above hash.
-      ingredients = nil
-      expect(ingredients).to eq(DataStruct.ingredients)
+      ingredients = []
+      Restaurant.stores.each do |store, info|
+        info[:dishes].each do |dish|
+          ingredients << dish[:ingredients]
+        end
+      end
+      formatted_ingredients = ingredients.flatten
+      expect(formatted_ingredients).to eq(DataStruct.ingredients)
     end
   end
 
