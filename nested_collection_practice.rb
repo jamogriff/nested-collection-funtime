@@ -8,6 +8,8 @@ RSpec.describe 'Nested Collection Fun-Time' do
     states = {
       "Oregon" => "OR",
       "Alabama" => "AL",
+      "New Jersey" => "NJ",
+      "Colorado" => "CO"
       }
 
     capitals = {
