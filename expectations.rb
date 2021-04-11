@@ -13,10 +13,10 @@ class DataStruct
 
   def self.people
     {
-        15 => 'Stacy',
+        15 => ['Stacy'],
         24 => ['Juan', 'Steve', 'Jill'], 
-        32 => 'Dom',
-        33 => 'Frank'
+        32 => ['Dom'],
+        33 => ['Frank']
     }
   end
 
